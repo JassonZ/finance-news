@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>财经快讯</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --primary: #1A1A1A;
+      --bg: #F5F6F8;
+      --card-bg: #fff;
+      --text: #1A1A1A;
+      --text-secondary: #666;
+      --text-tertiary: #999;
+      --shadow: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', sans-serif; 
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    
+    /* PC 端布局 */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      min-height: 100vh;
+      background: var(--card-bg);
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+      padding: 48px 24px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    
+    .header h1 { 
+      font-size: 32px; 
+      font-weight: 700; 
+      color: #fff;
+      position: relative;
+    }
+    
+    .header .date { 
+      font-size: 14px; 
+      color: rgba(255,255,255,0.7); 
+      margin-top: 8px;
+      position: relative;
+    }
+    
+    .header .stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      position: relative;
+    }
+    
+    .stat {
+      background: rgba(255,255,255,0.1);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .stat span {
+      font-weight: 600;
+      color: #4ECDC4;
+    }
+    
+    /* 筛选标签 */
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 16px 24px;
+      background: var(--card-bg);
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    
+    .tabs::-webkit-scrollbar { display: none; }
+    
+    .tab {
+      padding: 10px 18px;
+      border-radius: 22px;
+      border: none;
+      background: #F5F5F5;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: inherit;
+    }
+    
+    .tab:hover { background: #e8e8e8; }
+    
+    .tab.active { 
+      background: var(--primary); 
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(26,26,26,0.3);
+    }
+    
+    /* 新闻列表 */
+    .list { 
+      padding: 20px 24px 40px; 
+    }
+    
+    .card {
+      display: block;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #f5f5f5;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: transparent;
+      transition: background 0.3s;
+    }
+    
+    .card:hover { 
+      transform: translateY(-4px); 
+      box-shadow: var(--shadow-hover);
+      border-color: transparent;
+    }
+    
+    .card:hover::before {
+      background: var(--primary);
+    }
+    
+    .card-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-bottom: 12px; 
+    }
+    
+    .source-tag {
+      padding: 5px 12px;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    
+    .time { 
+      font-size: 13px; 
+      color: var(--text-tertiary); 
+    }
+    
+    .title { 
+      font-size: 17px; 
+      font-weight: 600; 
+      color: var(--text); 
+      line-height: 1.5; 
+      margin-bottom: 10px;
+    }
+    
+    .summary { 
+      font-size: 14px; 
+      color: var(--text-secondary); 
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .loading { 
+      text-align: center; 
+      padding: 60px 20px; 
+      color: var(--text-tertiary); 
+    }
+    
+    .footer { 
+      text-align: center; 
+      padding: 24px; 
+      color: var(--text-tertiary); 
+      font-size: 13px;
+      border-top: 1px solid #f5f5f5;
+    }
+    
+    /* PC 端优化 */
+    @media (min-width: 768px) {
+      .container {
+        margin: 40px auto;
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 720px;
+      }
+      
+      .header {
+        padding: 56px 32px 32px;
+      }
+      
+      .header h1 { font-size: 36px; }
+      
+      .tabs {
+        padding: 20px 32px;
+        gap: 10px;
+      }
+      
+      .tab {
+        padding: 12px 22px;
+        font-size: 15px;
+      }
+      
+      .list {
+        padding: 24px 32px 48px;
+      }
+      
+      .card {
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .title {
+        font-size: 18px;
+      }
+      
+      .summary {
+        font-size: 15px;
+      }
+    }
+    
+    /* 移动端 */
+    @media (max-width: 480px) {
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+      }
+      
+      .header {
+        padding: 40px 16px 20px;
+      }
+      
+      .header h1 { font-size: 26px; }
+      
+      .header .stats {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      
+      .stat {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+      
+      .tabs {
+        padding: 12px 16px;
+        gap: 6px;
+      }
+      
+      .tab {
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+      
+      .list {
+        padding: 16px;
+      }
+      
+      .card {
+        padding: 16px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+      
+      .title {
+        font-size: 15px;
+      }
+      
+      .summary {
+        font-size: 13px;
+        -webkit-line-clamp: 3;
+      }
+    }
+    
+    /* 刷新按钮 */
+    .refresh-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .refresh-btn:hover {
+      transform: rotate(180deg) scale(1.1);
+    }
+    
+    @media (max-width: 480px) {
+      .refresh-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+    }
+    
+    /* 夜间模式 */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --card-bg: #1E1E1E;
+        --text: #E0E0E0;
+        --text-secondary: #A0A0A0;
+        --text-tertiary: #666;
+        --shadow: 0 2px 8px rgba(0,0,0,0.2);
+        --shadow-hover: 0 8px 24px rgba(0,0,0,0.3);
+      }
+      
+      .tabs {
+        background: #1E1E1E;
+        border-bottom-color: #333;
+      }
+      
+      .tab:not(.active) {
+        background: #2A2A2A;
+        color: #A0A0A0;
+      }
+      
+      .card {
+        border-color: #333;
+      }
+      
+      .footer {
+        border-top-color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>财经快讯</h1>
+      <p class="date" id="date"></p>
+      <div class="stats">
+        <div class="stat">新闻 <span id="total">0</span> 条</div>
+        <div class="stat">来源 <span id="sources">0</span> 个</div>
+      </div>
+    </header>
+    
+    <div class="tabs" id="tabs"></div>
+    
+    <main class="list" id="list">
+      <div class="loading">加载中...</div>
+    </main>
+    
+    <footer class="footer">
+      <p>© 2024 财经快讯 · 数据来源：多家财经媒体</p>
+    </footer>
+  </div>
+  
+  <button class="refresh-btn" onclick="refreshData()" title="刷新数据">↻</button>
+
+  <script>
+    // 新闻数据
+    const NEWS_DATA = [
+      { id: "1", title: "A股三大指数今日涨跌不一，沪指小幅收涨0.32%", source: "新浪财经", time: "15:30", url: "https://finance.sina.com.cn", summary: "今日盘面上，煤炭、汽车整车、银行等板块涨幅居前，酒店餐饮、景点旅游等板块则表现较弱。" },
+      { id: "2", title: "央行：保持流动性合理充裕，降低企业融资成本", source: "东方财富", time: "14:45", url: "https://stock.eastmoney.com", summary: "央行发布2024年第一季度货币政策执行报告，强调稳健的货币政策要灵活适度。" },
+      { id: "3", title: "证监会：全面实行股票发行注册制改革正式启动", source: "财联社", time: "14:20", url: "https://www.cls.cn", summary: "证监会表示将进一步优化IPO定价机制，强化信息披露监管。" },
+      { id: "4", title: "美联储主席鲍威尔：将继续加息控制通胀", source: "Reuters", time: "13:00", url: "https://www.reuters.com", summary: "美联储主席在国会听证会上表示，通胀仍然过高，需要继续努力。" },
+      { id: "5", title: "比亚迪发布2024年新车型，销量预期同比增长50%", source: "雪球", time: "12:30", url: "https://xueqiu.com", summary: "比亚迪今日发布多款新车型，覆盖纯电和混动两大领域。" },
+      { id: "6", title: "美股三大指数收盘涨跌不一，科技股普遍回调", source: "Bloomberg", time: "11:45", url: "https://bloomberg.com", summary: "纳斯达克指数小幅下跌，Apple、特斯拉股价承压。" },
+      { id: "7", title: "港股恒生指数低开高走，地产股表现强势", source: "东方财富", time: "11:00", url: "https://stock.eastmoney.com", summary: "内房股集体反弹，碧桂园、恒大涨幅超10%。" },
+      { id: "8", title: "宁德时代一季度净利润同比增长20%，超出市场预期", source: "雪球", time: "10:30", url: "https://xueqiu.com", summary: "宁德时代发布财报，动力电池出货量创新高。" },
+      { id: "9", title: "欧洲央行维持利率不变，欧元汇率小幅下跌", source: "Reuters", time: "10:00", url: "https://www.reuters.com", summary: "欧洲央行继续维持三大关键利率不变。" },
+      { id: "10", title: "黄金价格突破2000美元/盎司，创近一年新高", source: "新浪财经", time: "09:30", url: "https://finance.sina.com.cn", summary: "避险情绪升温，黄金ETF资金流入明显。" },
+      { id: "11", title: "阿里巴巴股价大涨8%，市值重返2万亿港元", source: "新浪财经", time: "09:15", url: "https://finance.sina.com.cn", summary: "阿里巴巴发布财报后，多家投行上调目标价。" },
+      { id: "12", title: "芯片板块午后拉升，寒武纪涨停创新高", source: "东方财富", time: "09:00", url: "https://stock.eastmoney.com", summary: "半导体国产替代加速，芯片板块今日表现强势。" },
+    ];
+
+    const COLORS = {
+      '新浪财经': '#E53935',
+      '东方财富': '#1E88E5',
+      '财联社': '#43A047',
+      '雪球': '#FF7043',
+      'Reuters': '#5C6BC0',
+      'Bloomberg': '#FFA726',
+    };
+
+    const SOURCES = [
+      { key: 'all', label: '全部' },
+      { key: 'sina', label: '新浪' },
+      { key: 'eastmoney', label: '东方财富' },
+      { key: 'xueqiu', label: '雪球' },
+      { key: 'reuters', label: 'Reuters' },
+      { key: 'bloomberg', label: 'Bloomberg' },
+      { key: 'cls', label: '财联社' },
+    ];
+
+    const SOURCE_MAP = { 
+      'sina': '新浪', 'eastmoney': '东方财富', 'xueqiu': '雪球', 
+      'reuters': 'Reuters', 'bloomberg': 'Bloomberg', 'cls': '财联社' 
+    };
+
+    let activeSource = 'all';
+
+    // 初始化
+    document.getElementById('date').textContent = new Date().toLocaleDateString('zh-CN', { 
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+    });
+
+    // 统计
+    const uniqueSources = [...new Set(NEWS_DATA.map(n => n.source))];
+    document.getElementById('total').textContent = NEWS_DATA.length;
+    document.getElementById('sources').textContent = uniqueSources.length;
+
+    // 渲染标签
+    function renderTabs() {
+      const tabsEl = document.getElementById('tabs');
+      tabsEl.innerHTML = SOURCES.map(s => 
+        `<button class="tab ${activeSource === s.key ? 'active' : ''}" data-key="${s.key}">${s.label}</button>`
+      ).join('');
+      
+      tabsEl.querySelectorAll('.tab').forEach(tab => {
+        tab.onclick = () => {
+          activeSource = tab.dataset.key;
+          renderTabs();
+          renderList();
+        };
+      });
+    }
+
+    // 渲染列表
+    function renderList() {
+      const listEl = document.getElementById('list');
+      
+      const filtered = activeSource === 'all' 
+        ? NEWS_DATA 
+        : NEWS_DATA.filter(n => n.source.includes(SOURCE_MAP[activeSource]));
+      
+      if (filtered.length === 0) {
+        listEl.innerHTML = '<div class="loading">暂无数据</div>';
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(item => `
+        <a class="card" href="${item.url}" target="_blank">
+          <div class="card-header">
+            <span class="source-tag" style="background: ${COLORS[item.source] || '#666'}">${item.source}</span>
+            <span class="time">${item.time}</span>
+          </div>
+          <h3 class="title">${item.title}</h3>
+          ${item.summary ? `<p class="summary">${item.summary}</p>` : ''}
+        </a>
+      `).join('');
+    }
+
+    // 刷新数据（模拟）
+    function refreshData() {
+      const btn = document.querySelector('.refresh-btn');
+      btn.style.transform = 'rotate(360deg)';
+      
+      // 重新打乱数据顺序模拟更新
+      const shuffled = [...NEWS_DATA].sort(() => Math.random() - 0.5);
+      NEWS_DATA.length = 0;
+      NEWS_DATA.push(...shuffled);
+      
+      renderList();
+      
+      setTimeout(() => {
+        btn.style.transform = '';
+      }, 500);
+    }
+
+    // 初始化
+    renderTabs();
+    renderList();
+  </script>
+</body>
+</html>

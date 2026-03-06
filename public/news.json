@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "title": "A股不一，沪指三大指数今日涨跌小幅收涨0.32%",
+    "source": "新浪财经",
+    "time": "15:30",
+    "url": "https://finance.sina.com.cn",
+    "summary": "今日盘面上，煤炭、汽车整车、银行等板块涨幅居前"
+  },
+  {
+    "id": "2",
+    "title": "央行：保持流动性合理充裕，降低企业融资成本",
+    "source": "东方财富",
+    "time": "14:45",
+    "url": "https://stock.eastmoney.com",
+    "summary": "央行发布2024年第一季度货币政策执行报告"
+  },
+  {
+    "id": "3",
+    "title": "证监会：全面实行股票发行注册制改革正式启动",
+    "source": "财联社",
+    "time": "14:20",
+    "url": "https://www.cls.cn",
+    "summary": "证监会表示将进一步优化IPO定价机制"
+  },
+  {
+    "id": "4",
+    "title": "美联储主席鲍威尔：将继续加息控制通胀",
+    "source": "Reuters",
+    "time": "13:00",
+    "url": "https://www.reuters.com",
+    "summary": "美联储主席在听证会上表示通胀仍然过高"
+  },
+  {
+    "id": "5",
+    "title": "比亚迪发布2024年新车型，销量预期同比增长50%",
+    "source": "雪球",
+    "time": "12:30",
+    "url": "https://xueqiu.com",
+    "summary": "比亚迪今日发布多款新车型，覆盖纯电和混动"
+  },
+  {
+    "id": "6",
+    "title": "美股三大指数收盘涨跌不一，科技股普遍回调",
+    "source": "Bloomberg",
+    "time": "11:45",
+    "url": "https://bloomberg.com",
+    "summary": "纳斯达克指数小幅下跌，Apple、特斯拉股价承压"
+  },
+  {
+    "id": "7",
+    "title": "港股恒生指数低开高走，地产股表现强势",
+    "source": "东方财富",
+    "time": "11:00",
+    "url": "https://stock.eastmoney.com",
+    "summary": "内房股集体反弹，碧桂园、恒大涨幅超10%"
+  },
+  {
+    "id": "8",
+    "title": "宁德时代一季度净利润同比增长20%，超出市场预期",
+    "source": "雪球",
+    "time": "10:30",
+    "url": "https://xueqiu.com",
+    "summary": "宁德时代发布财报，动力电池出货量创新高"
+  },
+  {
+    "id": "9",
+    "title": "欧洲央行维持利率不变，欧元汇率小幅下跌",
+    "source": "Reuters",
+    "time": "10:00",
+    "url": "https://www.reuters.com",
+    "summary": "欧洲央行继续维持三大关键利率不变"
+  },
+  {
+    "id": "10",
+    "title": "黄金价格突破2000美元/盎司，创近一年新高",
+    "source": "新浪财经",
+    "time": "09:30",
+    "url": "https://finance.sina.com.cn",
+    "summary": "避险情绪升温，黄金ETF资金流入明显"
+  }
+]
