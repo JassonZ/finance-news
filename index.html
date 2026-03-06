@@ -33,6 +33,7 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.08);
     }
     
+    /* 列表页头部 */
     .header {
       background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
       padding: 48px 24px 24px;
@@ -110,7 +111,7 @@
       font-weight: 500;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.25s;
       font-family: inherit;
     }
     
@@ -134,10 +135,11 @@
       margin-bottom: 16px;
       text-decoration: none;
       box-shadow: var(--shadow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s;
       border: 1px solid #f5f5f5;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
     
     .card::before {
@@ -214,6 +216,124 @@
       border-top: 1px solid #f5f5f5;
     }
     
+    /* 详情页 */
+    .detail-page {
+      display: none;
+      min-height: 100vh;
+      background: var(--bg);
+    }
+    
+    .detail-page.active {
+      display: block;
+    }
+    
+    .list-page.hidden {
+      display: none;
+    }
+    
+    .detail-header {
+      background: var(--card-bg);
+      padding: 20px 24px;
+      padding-top: 50px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: var(--text);
+      cursor: pointer;
+      padding: 8px 0;
+      font-family: inherit;
+    }
+    
+    .back-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .detail-content {
+      padding: 24px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    
+    .detail-source {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 16px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    
+    .detail-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    
+    .detail-meta {
+      display: flex;
+      gap: 16px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .detail-summary {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    
+    .detail-actions {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .detail-btn {
+      flex: 1;
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    
+    .detail-btn.primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    .detail-btn.secondary {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid #ddd;
+    }
+    
+    .detail-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
     @media (min-width: 768px) {
       .container {
         margin: 40px auto;
@@ -230,6 +350,10 @@
       .card { padding: 24px; margin-bottom: 20px; }
       .title { font-size: 18px; }
       .summary { font-size: 15px; }
+      
+      .detail-header { padding: 24px 32px; padding-top: 50px; }
+      .detail-content { padding: 32px; }
+      .detail-title { font-size: 28px; }
     }
     
     @media (max-width: 480px) {
@@ -244,6 +368,11 @@
       .card { padding: 16px; border-radius: 12px; margin-bottom: 12px; }
       .title { font-size: 15px; }
       .summary { font-size: 13px; -webkit-line-clamp: 3; }
+      
+      .detail-header { padding: 16px; padding-top: 45px; }
+      .detail-content { padding: 20px; }
+      .detail-title { font-size: 22px; }
+      .detail-summary { font-size: 15px; }
     }
     
     .refresh-btn {
@@ -267,9 +396,6 @@
     }
     
     .refresh-btn:hover { transform: rotate(180deg) scale(1.1); }
-    .refresh-btn.loading { animation: spin 1s linear infinite; }
-    
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     
     @media (max-width: 480px) {
       .refresh-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 20px; }
@@ -289,29 +415,65 @@
       .tab:not(.active) { background: #2A2A2A; color: #A0A0A0; }
       .card { border-color: #333; }
       .footer { border-top-color: #333; }
+      .detail-meta { border-bottom-color: #333; }
+      .detail-btn.secondary { border-color: #444; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header class="header">
-      <h1>财经快讯</h1>
-      <p class="date" id="date"></p>
-      <div class="stats">
-        <div class="stat">新闻 <span id="total">0</span> 条</div>
-        <div class="stat">来源 <span id="sources">0</span> 个</div>
+    <!-- 列表页 -->
+    <div class="list-page" id="listPage">
+      <header class="header">
+        <h1>财经快讯</h1>
+        <p class="date" id="date"></p>
+        <div class="stats">
+          <div class="stat">新闻 <span id="total">0</span> 条</div>
+          <div class="stat">来源 <span id="sources">0</span> 个</div>
+        </div>
+      </header>
+      
+      <div class="tabs" id="tabs"></div>
+      
+      <main class="list" id="list">
+        <div class="loading">加载中...</div>
+      </main>
+      
+      <footer class="footer">
+        <p>© 2024 财经快讯 · 数据来源：Finnhub + Alpha Vantage</p>
+      </footer>
+    </div>
+    
+    <!-- 详情页 -->
+    <div class="detail-page" id="detailPage">
+      <div class="detail-header">
+        <button class="back-btn" onclick="showList()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          返回列表
+        </button>
       </div>
-    </header>
-    
-    <div class="tabs" id="tabs"></div>
-    
-    <main class="list" id="list">
-      <div class="loading">加载中...</div>
-    </main>
-    
-    <footer class="footer">
-      <p>© 2024 财经快讯 · 数据来源：Finnhub API</p>
-    </footer>
+      
+      <div class="detail-content">
+        <span class="detail-source" id="detailSource"></span>
+        <h1 class="detail-title" id="detailTitle"></h1>
+        <div class="detail-meta">
+          <span id="detailTime"></span>
+          <span id="detailSourceName"></span>
+        </div>
+        <p class="detail-summary" id="detailSummary"></p>
+        
+        <div class="detail-actions">
+          <a class="detail-btn primary" id="detailLink" href="" target="_blank">
+            阅读原文
+          </a>
+          <button class="detail-btn secondary" onclick="showList()">
+            返回列表
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
   
   <button class="refresh-btn" onclick="refreshData()" title="刷新数据">↻</button>
@@ -327,6 +489,10 @@
       '东方财富': '#1E88E5',
       '财联社': '#43A047',
       '雪球': '#FF7043',
+      'Insider Monkey': '#4CAF50',
+      'TipRanks': '#9C27B0',
+      'MarketBeat': '#00BCD4',
+      'Seeking Alpha': '#FF5722',
     };
 
     const SOURCES = [
@@ -334,7 +500,7 @@
       { key: 'CNBC', label: 'CNBC' },
       { key: 'Reuters', label: 'Reuters' },
       { key: 'Bloomberg', label: 'Bloomberg' },
-      { key: 'WSJ', label: 'WSJ' },
+      { key: 'MarketBeat', label: 'MarketBeat' },
     ];
 
     let NEWS_DATA = [];
@@ -372,15 +538,39 @@
       }
 
       listEl.innerHTML = filtered.map(item => `
-        <a class="card" href="${item.url}" target="_blank">
+        <div class="card" onclick="showDetail('${item.id}')">
           <div class="card-header">
             <span class="source-tag" style="background: ${COLORS[item.source] || '#666'}">${item.source}</span>
             <span class="time">${item.time}</span>
           </div>
           <h3 class="title">${item.title}</h3>
           ${item.summary ? `<p class="summary">${item.summary}</p>` : ''}
-        </a>
+        </div>
       `).join('');
+    }
+
+    function showDetail(id) {
+      const item = NEWS_DATA.find(n => n.id === id);
+      if (!item) return;
+      
+      document.getElementById('detailSource').textContent = item.source;
+      document.getElementById('detailSource').style.background = COLORS[item.source] || '#666';
+      document.getElementById('detailTitle').textContent = item.title;
+      document.getElementById('detailTime').textContent = item.time;
+      document.getElementById('detailSourceName').textContent = `来源: ${item.source}`;
+      document.getElementById('detailSummary').textContent = item.summary || '暂无摘要';
+      document.getElementById('detailLink').href = item.url;
+      
+      document.getElementById('listPage').classList.add('hidden');
+      document.getElementById('detailPage').classList.add('active');
+      
+      // 滚动到顶部
+      window.scrollTo(0, 0);
+    }
+
+    function showList() {
+      document.getElementById('detailPage').classList.remove('active');
+      document.getElementById('listPage').classList.remove('hidden');
     }
 
     async function loadNews() {
@@ -400,21 +590,8 @@
       }
     }
 
-    async function refreshData() {
-      const btn = document.querySelector('.refresh-btn');
-      btn.classList.add('loading');
-      btn.textContent = '⏳';
-      
-      try {
-        // 重新触发爬虫
-        await fetch('https://finnhub.io/api/v1/news?category=general&token=d6lepb1r01qrq6i2eli0d6lepb1r01qrq6i2elig');
-        // 刷新页面重新加载
-        location.reload();
-      } catch (e) {
-        console.error('刷新失败:', e);
-        btn.classList.remove('loading');
-        btn.textContent = '↻';
-      }
+    function refreshData() {
+      location.reload();
     }
 
     // 初始化
