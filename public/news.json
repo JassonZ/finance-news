@@ -1,82 +1,162 @@
 [
   {
-    "id": "1",
-    "title": "A股不一，沪指三大指数今日涨跌小幅收涨0.32%",
-    "source": "新浪财经",
-    "time": "15:30",
-    "url": "https://finance.sina.com.cn",
-    "summary": "今日盘面上，煤炭、汽车整车、银行等板块涨幅居前"
+    "id": "finnhub_7600709",
+    "title": "Jim Cramer's top 10 things to watch in the stock market Friday",
+    "source": "CNBC",
+    "time": "22:04",
+    "url": "https://www.cnbc.com/2026/03/06/jim-cramers-top-10-things-to-watch-in-the-stock-market-friday.html",
+    "summary": "Oil futures are surging again, and the February jobs report showed an unexpected drop in U.S. payrol"
   },
   {
-    "id": "2",
-    "title": "央行：保持流动性合理充裕，降低企业融资成本",
-    "source": "东方财富",
-    "time": "14:45",
-    "url": "https://stock.eastmoney.com",
-    "summary": "央行发布2024年第一季度货币政策执行报告"
+    "id": "finnhub_7600588",
+    "title": "United Airlines CEO: Fuel spike will hit results, but travel demand hasn't taken 'even a tiny step back'",
+    "source": "CNBC",
+    "time": "21:22",
+    "url": "https://www.cnbc.com/2026/03/06/united-airlines-ceo-scott-kirby.html",
+    "summary": "United CEO Scott Kirby said demand remains high but that fuel prices will hit first-quarter results."
   },
   {
-    "id": "3",
-    "title": "证监会：全面实行股票发行注册制改革正式启动",
-    "source": "财联社",
-    "time": "14:20",
-    "url": "https://www.cls.cn",
-    "summary": "证监会表示将进一步优化IPO定价机制"
-  },
-  {
-    "id": "4",
-    "title": "美联储主席鲍威尔：将继续加息控制通胀",
+    "id": "finnhub_7600271",
+    "title": "Sri Lanka moving 208 rescued Iranian ship crew to naval camp, sources say - Reuters",
     "source": "Reuters",
-    "time": "13:00",
-    "url": "https://www.reuters.com",
-    "summary": "美联储主席在听证会上表示通胀仍然过高"
+    "time": "19:08",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNcFNWbnI2b2pzeWE1QjJKZEdEQXRUbDIyRHdUU0pQTzVmTXQ2ekVrNGZPSDFJRHVKZTVZeHhIc2trTUNQSDlHT2xPY2dacVZHZFlMVVlBdDBOaGxiQ01DYkkwREFDQURvSXdrbVlqTTdwUHRhdGNQSHMzNTFSWUZjVjRCZTBNTzFuTWlLTTBLZG9zcDhhUFRCdThyLTg4ZFhaa0l6eXFDZWREbmZ2cEQ1YW1GaktLSlkyWXBRRk9QTEJDUQ?oc=5",
+    "summary": "Sri Lanka moving 208 rescued Iranian ship crew to naval camp, sources say  Reuters"
   },
   {
-    "id": "5",
-    "title": "比亚迪发布2024年新车型，销量预期同比增长50%",
-    "source": "雪球",
-    "time": "12:30",
-    "url": "https://xueqiu.com",
-    "summary": "比亚迪今日发布多款新车型，覆盖纯电和混动"
-  },
-  {
-    "id": "6",
-    "title": "美股三大指数收盘涨跌不一，科技股普遍回调",
-    "source": "Bloomberg",
-    "time": "11:45",
-    "url": "https://bloomberg.com",
-    "summary": "纳斯达克指数小幅下跌，Apple、特斯拉股价承压"
-  },
-  {
-    "id": "7",
-    "title": "港股恒生指数低开高走，地产股表现强势",
-    "source": "东方财富",
-    "time": "11:00",
-    "url": "https://stock.eastmoney.com",
-    "summary": "内房股集体反弹，碧桂园、恒大涨幅超10%"
-  },
-  {
-    "id": "8",
-    "title": "宁德时代一季度净利润同比增长20%，超出市场预期",
-    "source": "雪球",
-    "time": "10:30",
-    "url": "https://xueqiu.com",
-    "summary": "宁德时代发布财报，动力电池出货量创新高"
-  },
-  {
-    "id": "9",
-    "title": "欧洲央行维持利率不变，欧元汇率小幅下跌",
+    "id": "finnhub_7600608",
+    "title": "White House to press defense firms to boost production as US strikes on Iran draw down stockpiles - Reuters",
     "source": "Reuters",
-    "time": "10:00",
-    "url": "https://www.reuters.com",
-    "summary": "欧洲央行继续维持三大关键利率不变"
+    "time": "19:04",
+    "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdjQwbEhLM3NYbWk4cU5UaDZKX2d4SktvYUVySzEtWGhTTzBGa0l1cmZOa05hUnVzb19qd280VWJMNU1MWFA5QV9hWkNsa1czNDNGd1RGNGJWYVk4ODNRRnhlZGRUOWpramVwREFhWHZWa3pyLVFkVE1kM2FodkRRU2VzYmZiZG9ZaWwteVhJR2ktRkRLb3lTcG9JWGE2RXhrbUI0djUtQWxlQmFtdDdfdFZVZ1ZtRWJpdjZSeGVMcGdSYklmR2NhSzVBZXNDeHJZNEJJ?oc=5",
+    "summary": "White House to press defense firms to boost production as US strikes on Iran draw down stockpiles  R"
   },
   {
-    "id": "10",
-    "title": "黄金价格突破2000美元/盎司，创近一年新高",
-    "source": "新浪财经",
-    "time": "09:30",
-    "url": "https://finance.sina.com.cn",
-    "summary": "避险情绪升温，黄金ETF资金流入明显"
+    "id": "finnhub_7600162",
+    "title": "Azerbaijan says it is evacuating its diplomats from Iran for their own safety - Reuters",
+    "source": "Reuters",
+    "time": "18:09",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOb0NxaUFJbEZFMURveWdkV0RpejVOY1hTSFFHUDFJUFJUc24zUGlxeFVpWWNRcHRleG1sUkd1dnZ3NHFwNTZvWVdtaHBNcWE0di1zUl80aWJqd1Bfa0YzdDZaZWlJeHNZMV9NV1loRnMyQndyRmZsa0lNSGYtaVB0WUVrTElkNElVUVI3cG9kcWdLOHU5aVVuZVdRRGJiWHhVNUYyQnkxV3ZsckdTbEhKYkNZRFdSeUtpTXdzcGJoTQ?oc=5",
+    "summary": "Azerbaijan says it is evacuating its diplomats from Iran for their own safety  Reuters"
+  },
+  {
+    "id": "finnhub_7600059",
+    "title": "Russian energy demand seeing 'significant' bump from Iran war, Kremlin says - Reuters",
+    "source": "Reuters",
+    "time": "17:45",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPcmpiN1dEMjYxMndaU2Z4QldnR25UNzhfSDAtcVBQWXVaLTZXWnFxV0V3UDB3T2UzU0g3ampjWjhNSE9ENEc5MFNtaWxzUE1nOGIwSG5uQ05lLWlCa0VndDVMalJyWk9KUXRJdGN6SzF2SXdMcVFQNGJUZXZPV0owZTJ1WTlZQjZ1V0sxZ1ZXM2VhYnpVcXJDcFRvZmFWMHZZbUJKeDFxd2pxMDRuOGdpSHJvcTYwdm9oUE9Z?oc=5",
+    "summary": "Russian energy demand seeing 'significant' bump from Iran war, Kremlin says  Reuters"
+  },
+  {
+    "id": "finnhub_7600272",
+    "title": "India's central bank deploys $12 bln to defend rupee as Iran war jolts markets, bankers say - Reuters",
+    "source": "Reuters",
+    "time": "16:52",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPLTJYRkZaN19rSWRLMlJpSUExelNwdkRCZkt0Q2txVWJ2YjA4X05fRVppQkFLajFZX3Q3ZHhPZDNvVHBEdk9LZXZURFlsYWJUbjdXTml1cWhZMHBUWDA1akJBSk1jTGxxMkprRnptSFNnb3FTQTJQZm1raXR6Sk8yZ3R5UWJ1Z3lBWlhTYzh3a2lpcmQ5Y0l1N2R0Tmg3dEdpMnVjSkJzNnRiTXlRQ2UzbXdUOEc5RGlibDlReS04ZFY4VENR?oc=5",
+    "summary": "India's central bank deploys $12 bln to defend rupee as Iran war jolts markets, bankers say  Reuters"
+  },
+  {
+    "id": "finnhub_7600058",
+    "title": "UK holds four men on suspicion of Iranian spying on Jewish sites - Reuters",
+    "source": "Reuters",
+    "time": "16:07",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQdVFnQXc5dmUzNGp1OWppUlotamd6dzYxa3NFamxaakxKYkpaU2dzQ1JEWWVjQjFqaS14dXhXVTVIODRtVkpPaXFRaFYySDk0dzUtUldXZC1GVjg0TlFjeHlnc214eUUzYTE3UWZOMkg2N3lfejFkUUJuTG9UVjZHVjRhR2tZZXdsN1N6bkRmVnJpUUoxUW5fNTZqQ0RIdWVESkRHV0JUSTV3aFpELTdV?oc=5",
+    "summary": "UK holds four men on suspicion of Iranian spying on Jewish sites  Reuters"
+  },
+  {
+    "id": "finnhub_7600057",
+    "title": "South Korea, US militaries discuss moving Patriot missiles to Iran war, Seoul says - Reuters",
+    "source": "Reuters",
+    "time": "15:40",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUktaWEszXzh0aHRycUVyYnh3YzBsRHlyTU0tcTdEU2pBZ3NlNGU3UlhEdkI2UWJfMnNBekZDdmswZFR0T2VPYXJGZEdoUHNjWGlEZUcyZEt2aHhuWVU3OW5fcVVMeU40cE1pU2JnZnkzY2JKTWE0NlBxNHVSMjl5SVV2RnVnNVZGdTZ1Y1c0VjNldENnYWZTcU9raWMxUlhUU3owWnVGNWFkQWpTZ2xTQ0d1YzVZUV9rbm1DODFqelRTdk85a0d3T0RiSk4?oc=5",
+    "summary": "South Korea, US militaries discuss moving Patriot missiles to Iran war, Seoul says  Reuters"
+  },
+  {
+    "id": "finnhub_7599626",
+    "title": "Some wealthy Asians look to move Dubai assets closer to home on Iran war fears - Reuters",
+    "source": "Reuters",
+    "time": "14:37",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX2tVeXhMMU9DX3Jzd2NDeWl0OTdiVjVwSUlkVnViN3ZDemV0d05BSk1qLTMyUUpDQ3R5VkdsdFhHdXF4UlpMRkt0dlBTV0RpTldVYUhfeW85UVJvdFpZTVljcy1kVUNHX3QyLTF3OVoyaU1oVjhUNW1qdnVqNFp2QlpKOXRMZkd4TGxINEhCbmxoTlc4T3prd1FMemxqZUplblZTVkw4N3lucnZNUUYxY1JiYVFZczZHR2Nr?oc=5",
+    "summary": "Some wealthy Asians look to move Dubai assets closer to home on Iran war fears  Reuters"
+  },
+  {
+    "id": "finnhub_7599628",
+    "title": "Iran war exposes fragility of Western aluminium market - Reuters",
+    "source": "Reuters",
+    "time": "14:05",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQanJuMVdTRjQyRDFleDhxZU1IdVNrQWVWWFRtX0pUS19Yb0tyMWl2c3c4aU0yYVBxQjEzc3p2TlMwaXpydGlpSkZJZU5jOEJhbDBLNVV4UTAxV2tFMXgxM3ZKV3ROV3Faazk2MjZaU09WalRvYUNmRE9TNFIwU2VkbFFzOU5SZ0V0dWsxMW02YWdNYUR6VjRLS3VtX01yUWtTSjNpMjg2cEJuQ2s?oc=5",
+    "summary": "Iran war exposes fragility of Western aluminium market  Reuters"
+  },
+  {
+    "id": "finnhub_7598800",
+    "title": "Israel pounds Beirut in expansion of war; Iran says countries have begun mediation efforts - Reuters",
+    "source": "Reuters",
+    "time": "11:53",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNN3pJQUlYZnl0RWVfZS1zdjB2NnU0TkV3Um9mb2Y3WGpLM1BqWVlRY09RdFRrR2RRWmZaQm1wOVJSZTZBSHFvNExVVWZkNDh0M0hQSERseWhYc1M5VG1OVGxRMW9aMmJiamJTYmpHUDYyTW5uRlpwV0FuZkJ3ZEhYS0xEVjNtYUZuN1dGd3pMM0QzNXMwRTFWOXM1RXRUck9lT0piVg?oc=5",
+    "summary": "Israel pounds Beirut in expansion of war; Iran says countries have begun mediation efforts  Reuters"
+  },
+  {
+    "id": "finnhub_7598697",
+    "title": "Taiwan's Foxconn says everyone will feel impact of prolonged Iran conflict - Reuters",
+    "source": "Reuters",
+    "time": "11:03",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQUGN2RzJ2NXdQWmJ6U2l3T2dLZktxdml5SU5HU0hOVDlIV0gyaEFQZmt6TzY1Wmx0Y01qTWd3N2VFWHBUZGJfQVpVTWVjMGUtblFYSmJZNzVCU0VNMlJxQTZnQUZBOUFKVFo3TUxnYnNNOXdKQ3lRMzZIcWo1d1ZOYjZXVzI0cUQ1dS1oOVQ1UVRGQmdhdW5BaDcza0VUdlhWYncyR3dhdGgzd2oxZmtFLWtFSmgwUUdRSTFZS19R?oc=5",
+    "summary": "Taiwan's Foxconn says everyone will feel impact of prolonged Iran conflict  Reuters"
+  },
+  {
+    "id": "finnhub_7598389",
+    "title": "Exclusive: US investigation points to likely US responsibility in Iran school strike, sources say - Reuters",
+    "source": "Reuters",
+    "time": "10:02",
+    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPSkNOMXJmbmIzOUEyVGd5NTRhZEU4SGtaU1ZQOUI5c2Q0Mkp5aDl0LTA2cDFqM2RhOGZoY0s4alB0NXAyMnh2LXdKMTB0bjNFYkQ4SEdVYzUxMFpsRkVTZmJnY1Q2alRfQjhSNF9Md2VxYVRldURjS1dvMUhIRl9saFlVWkVRSFRRak5hejRXb1JWZHZ6aDRJbExadWN5MkVTNkVlZ3VGZWgtSXVvZUxETTRCcVBwQVlLOW9Jd2NudVF6TzdXQnVqMmRhVzdtZw?oc=5",
+    "summary": "Exclusive: US investigation points to likely US responsibility in Iran school strike, sources say  R"
+  },
+  {
+    "id": "finnhub_7599627",
+    "title": "Stocks slide as oil price fears, US jobs data rattle markets - Reuters",
+    "source": "Reuters",
+    "time": "09:48",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPblJtd0hiQ0o4eGxqMVNoOEQxNTY4OG5odzJyVlg3VjdCNExHbFRxRC1qYm5UZE9meHhHRlFJajBRdnJxVHNKWGYxempRY1BlREgxUzNhWFNxdnFzcE9qSWQ0S2FiWm1icWdfbFdseVU1di1XelFtTm1hSjBaOTVfTjdHQQ?oc=5",
+    "summary": "Stocks slide as oil price fears, US jobs data rattle markets  Reuters"
+  },
+  {
+    "id": "finnhub_7598594",
+    "title": "Dollar set for steepest weekly gain in over a year as Iran war fuels safe-haven demand - Reuters",
+    "source": "Reuters",
+    "time": "09:02",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPeWxEMFNYTnFWeFI2VnE2cXhDS2pRQm9NVV9NSHU4M3hkZFdEU1NNdk1ubTZjUHBjajRndlR5TlpfaGlYbURIZnVLbVNYLWc3bTJTbndaRXBVeVZJVFdVam5HdFlPakdFTlFvMTNwWldOVDJKWFZ3N1Z2aDFKOXRTWExwZFlFazlPT3d1WWVZOTNweTIxanpKenFPV19kV3lyNFNzZWxXZkpRRG1zSkJvUlo5VTdjRzhSY3loaA?oc=5",
+    "summary": "Dollar set for steepest weekly gain in over a year as Iran war fuels safe-haven demand  Reuters"
+  },
+  {
+    "id": "finnhub_7598391",
+    "title": "Three Australians were aboard US submarine that sank Iranian ship, PM Albanese says - Reuters",
+    "source": "Reuters",
+    "time": "09:00",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNY1NfT2JjQm1SYlh3SFFRdXM4TG5tVW04OVlPMzhtSEZnZmthaDgxOUVBak5sSTF0NWotLWsxekpIOExtUVRRbTVNbjViTThEY0pXRGpiLWZNRHdWTk5FcWNnSHg0bUVPRTFFSE9DZXRJcWtLdFZOSDNzX3RYN3I5ZVlMc1FORDZWZ2FQLTFpWXhjX2hadVNqQzYxcXJTQTFwOUM3dG9hY0hYTjcydFl6aG84ejVPUUJMT3F4cmoyQ1lTZUVyQnp5ejNwY1Q?oc=5",
+    "summary": "Three Australians were aboard US submarine that sank Iranian ship, PM Albanese says  Reuters"
+  },
+  {
+    "id": "finnhub_7598286",
+    "title": "UAE explores freezing Iranian assets to punish Tehran for attacks, WSJ reports - Reuters",
+    "source": "Reuters",
+    "time": "08:38",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNamFTQTFWVzNCWDNyMHVOSzZEbjhGXzZxQ090NjVVa1pDekcxVUMyM3FnRGNfbElsVFhINnFjSGhJcW9yNmlYbVl5U2lQVDJIaUloT3hxRzdkalhYLWoyY3QxVUpRMnZ1RnMza0pQUjdseWY3ZDlzZEJjeXoyN0tvcjJhM2JlOVB4cHdZeU53dExsQ1dqOXlCY0RfNW15eEZkellUNFFwaWF1Ul92SlNfV0NBejB6TEl5MEgwXzR0SXpKdw?oc=5",
+    "summary": "UAE explores freezing Iranian assets to punish Tehran for attacks, WSJ reports  Reuters"
+  },
+  {
+    "id": "finnhub_7599947",
+    "title": "Jim Cramer says the market is stuck in limbo – and the Iran war isn't the only cause",
+    "source": "CNBC",
+    "time": "07:28",
+    "url": "https://www.cnbc.com/2026/03/05/jim-cramer-market-is-stuck-in-limbo-iran-war-isnt-only-cause.html",
+    "summary": "\"Nobody wants to touch the semis if their total addressable market is about to get clubbed by the go"
+  },
+  {
+    "id": "finnhub_7598490",
+    "title": "Gulf states could review investments due to financial strains caused by Iran war, FT reports - Reuters",
+    "source": "Reuters",
+    "time": "07:08",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNZk1BdUpmRW5iX3NDb0xsNzR1azZhNlRmOEdYV29HQlNtaktjb21HVVdBN01YZjZYMi1JTTQxME9ZZVAwSERfbDNmbUtaMGNETDJCNk5xcTMyMTJJdl9yN2laanhpQjgzbDZwT3FfVFNFb2JkY2loelBvODRiNzR5SDBxNHQ1el84clpSWThJRG1Gam5ncjFUVkpVckhRSTM2M0JUNjBrSDRTNEpYX2JsUWRmODJCeUF2S2xLVDREUmtEenBMNmZZMWFsbUNTZTg?oc=5",
+    "summary": "Gulf states could review investments due to financial strains caused by Iran war, FT reports  Reuter"
   }
 ]
